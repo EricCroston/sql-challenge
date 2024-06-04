@@ -6,6 +6,14 @@
 -- To reset the sample schema, replace everything with
 -- two dots ('..' - without quotes).
 
+CREATE TABLE "titles" (
+    "title_id" VARCHAR(50)   NOT NULL,
+    "title" VARCHAR(50)   NOT NULL,
+    CONSTRAINT "pk_titles" PRIMARY KEY (
+        "title_id"
+     )
+);
+
 CREATE TABLE "employees" (
     "emp_no" INTEGER   NOT NULL,
     "emp_title_id" VARCHAR(50)   NOT NULL,
@@ -40,14 +48,6 @@ CREATE TABLE "dept_manager" (
 CREATE TABLE "salaries" (
     "emp_no" INTEGER   NOT NULL,
     "salary" INTEGER   NOT NULL
-);
-
-CREATE TABLE "titles" (
-    "title_id" VARCHAR(50)   NOT NULL,
-    "title" VARCHAR(50)   NOT NULL,
-    CONSTRAINT "pk_titles" PRIMARY KEY (
-        "title_id"
-     )
 );
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
